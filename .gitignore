@@ -4,5 +4,5 @@ bin
 exclude
 *.interp
 *.tokens
-Lib*
+Lib*.java
 *.expr
