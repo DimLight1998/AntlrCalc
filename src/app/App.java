@@ -2,6 +2,8 @@ package app;
 
 import org.antlr.v4.runtime.*;
 import org.antlr.v4.runtime.tree.*;
+import java.io.FileInputStream;
+import java.io.InputStream;
 
 /**
  * App
@@ -14,7 +16,7 @@ public class App {
         InputStream is = System.in;
         if (inputFile != null)
             is = new FileInputStream(inputFile);
-        ANTLRInputStream inputStream = new ANTLRInputStream(inputFile);
+        CharStream inputStream = CharStreams.fromStream(is);
         LibExprLexer lexer = new LibExprLexer(inputStream);
         CommonTokenStream tokenStream = new CommonTokenStream(lexer);
         LibExprParser parser = new LibExprParser(tokenStream);
